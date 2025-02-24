@@ -1,0 +1,39 @@
+<odoo>
+    <!-- Root Menu: Insurance -->
+    <menuitem id="menu_insurance_root" name="Insurance" sequence="10"/>
+
+    <!-- Customers Menu -->
+    <menuitem id="menu_insurance_customer"
+              name="Customers"
+              parent="menu_insurance_root"
+              action="vehicle_insurance.action_insurance_customer"
+              sequence="20"/>
+
+    <!-- Policies Menu -->
+    <menuitem id="menu_insurance_policy"
+              name="Policies"
+              parent="menu_insurance_root"
+              action="vehicle_insurance.action_insurance_policy"
+              sequence="30"/>
+
+    <!-- Claims Menu -->
+    <menuitem id="menu_insurance_claim"
+              name="Claims"
+              parent="menu_insurance_root"
+              action="vehicle_insurance.action_insurance_claim"
+              sequence="40"/>
+
+    <!-- Calendar for Insurance Events (from Odoo's Calendar Module) -->
+    <menuitem id="menu_insurance_calendar"
+              name="Schedule"
+              parent="menu_insurance_root"
+              action="calendar.action_calendar_event"
+              sequence="50"/>
+
+    <!-- Employee Management (from Odoo HR Module) -->
+    <menuitem id="menu_insurance_employee"
+              name="Employees"
+              parent="menu_insurance_root"
+              action="hr.open_view_employee_list"
+              sequence="60"/>
+</odoo>

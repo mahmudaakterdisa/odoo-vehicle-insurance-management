@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_insurance_customer,insurance_customer,model_insurance_customer,,1,1,1,1
+access_insurance_policy,insurance_policy,model_insurance_policy,,1,1,1,1
+access_insurance_claim,insurance_claim,model_insurance_claim,,1,1,1,1

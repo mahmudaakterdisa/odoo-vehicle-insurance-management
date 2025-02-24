@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_insurance_policy_list" model="ir.ui.view">
+        <field name="name">insurance.policy.list</field>
+        <field name="model">insurance.policy</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="policy_number"/>
+                <field name="customer_id"/>
+                <field name="insurance_policy_type"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="status" widget="statusbar"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_insurance_policy_kanban" model="ir.ui.view">
+        <field name="name">insurance.policy.kanban</field>
+        <field name="model">insurance.policy</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div>
+                                <strong>Policy:</strong>
+                                <span t-esc="record.policy_number"/>
+                            </div>
+                            <div>
+                                <strong>Status:</strong>
+                                <span t-esc="record.status"
+                                      t-att-class="'label ' + (
+                                          'label-success' if record.status.raw_value == 'active' else
+                                          'label-warning' if record.status.raw_value == 'expired' else
+                                          'label-danger' if record.status.raw_value == 'cancelled' else ''
+                                      )"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
+
